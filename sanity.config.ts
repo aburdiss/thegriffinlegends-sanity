@@ -6,7 +6,14 @@ import { schemaTypes } from './schemaTypes';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
-const singletonTypes = ['home', 'privacyPolicy', 'contactBlock'];
+const singletonTypes = [
+  'home',
+  'privacyPolicy',
+  'bookPage',
+  'lorePage',
+  'about',
+  'contact',
+];
 
 export default defineConfig({
   name: 'default',
@@ -30,6 +37,42 @@ export default defineConfig({
             ),
 
             // Regular document types
+            S.documentTypeListItem('author').title('Author'),
+            S.documentTypeListItem('book').title('Book'),
+
+            S.listItem()
+              .title('Books Page')
+              .id('bookPage')
+              .child(
+                S.document().schemaType('bookPage').documentId('bookPage'),
+              ),
+
+            S.documentTypeListItem('lore').title('Lore'),
+            S.listItem()
+              .title('Lore Page')
+              .id('lorePage')
+              .child(
+                S.document().schemaType('lorePage').documentId('lorePage'),
+              ),
+
+            S.documentTypeListItem('news').title('News'),
+
+            S.listItem()
+              .title('About')
+              .id('about')
+              .child(S.document().schemaType('about').documentId('about')),
+            S.listItem()
+              .title('Contact')
+              .id('contact')
+              .child(S.document().schemaType('contact').documentId('contact')),
+            S.listItem()
+              .title('Privacy Policy')
+              .id('privacyPolicy')
+              .child(
+                S.document()
+                  .schemaType('privacyPolicy')
+                  .documentId('privacyPolicy'),
+              ),
           ]),
     }),
     structureTool(),
