@@ -16,12 +16,26 @@ export default defineType({
       title: 'Author',
       type: 'reference',
       to: [{ type: 'author' }],
+      validation: (Rule) => [Rule.required()],
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      validation: (Rule) => [Rule.required()],
+    }),
+    defineField({
+      name: 'publishDate',
+      title: 'Publish Date',
+      type: 'date',
+      validation: (Rule) => [Rule.required()],
     }),
     defineField({
       name: 'shortDescription',
       title: 'Short Description',
       type: 'array',
       of: [{ type: 'block' }],
+      validation: (Rule) => [Rule.required()],
     }),
     defineField({
       name: 'image',
@@ -43,6 +57,7 @@ export default defineType({
       title: 'Body',
       type: 'array',
       of: [{ type: 'block' }],
+      validation: (Rule) => [Rule.required()],
     }),
   ],
 });
