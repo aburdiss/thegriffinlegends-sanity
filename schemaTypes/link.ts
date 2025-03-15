@@ -15,7 +15,11 @@ export default defineType({
       name: 'url',
       title: 'URL',
       type: 'url',
-      validation: (Rule) => [Rule.required()],
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ['http', 'https', 'mailto', 'tel'],
+        }).required(),
     }),
   ],
 });
