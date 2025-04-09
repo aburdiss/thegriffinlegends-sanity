@@ -22,6 +22,8 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      description:
+        'an all-lowercase dash-separated string to use in the URL (ex. "godfreys-crusade")',
       validation: (Rule) => [Rule.required()],
     }),
     defineField({

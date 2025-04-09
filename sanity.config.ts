@@ -56,6 +56,14 @@ export default defineConfig({
               ),
 
             S.documentTypeListItem('news').title('News'),
+            S.documentTypeListItem('event').title('Event'),
+
+            S.listItem()
+              .title('News and Events Page')
+              .id('newsEventPage')
+              .child(
+                S.document().schemaType('newsEventPage').documentId('newsEventPage'),
+              ),
 
             S.listItem()
               .title('About')

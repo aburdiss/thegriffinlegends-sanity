@@ -3,11 +3,13 @@ import author from './author';
 import book from './book';
 import bookPage from './bookPage';
 import contact from './contact';
+import event from './event';
 import home from './home';
 import link from './link';
 import lore from './lore';
 import lorePage from './lorePage';
 import news from './news';
+import newsEventPage from './newsEventPage';
 import privacyPolicy from './privacyPolicy';
 import review from './review';
 
@@ -22,6 +24,8 @@ export const schemaTypes = [
   lore,
   lorePage,
   news,
+  event,
+  newsEventPage,
   privacyPolicy,
   review,
 ];
