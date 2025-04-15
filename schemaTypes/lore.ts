@@ -58,7 +58,24 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        { type: 'block' },
+        {
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+              description: 'Alternative text is required.',
+              hidden: ({ parent }) => !parent?.asset,
+              validation: (Rule) => [Rule.required()],
+            },
+          ],
+        },
+      ],
       validation: (Rule) => [Rule.required()],
     }),
   ],
