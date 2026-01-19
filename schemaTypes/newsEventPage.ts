@@ -16,6 +16,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'pastEventsHeadline',
+      title: 'Past Events Headline',
+      type: 'string',
+    }),
+    defineField({
       name: 'newsHeadline',
       title: 'News Headline',
       type: 'string',

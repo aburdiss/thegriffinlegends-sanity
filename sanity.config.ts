@@ -1,7 +1,5 @@
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
 import { structureTool } from 'sanity/structure';
-import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemaTypes';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
@@ -23,7 +21,7 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    deskTool({
+    structureTool({
       structure: (S) =>
         S.list()
           .title('Content')
@@ -62,7 +60,9 @@ export default defineConfig({
               .title('News and Events Page')
               .id('newsEventPage')
               .child(
-                S.document().schemaType('newsEventPage').documentId('newsEventPage'),
+                S.document()
+                  .schemaType('newsEventPage')
+                  .documentId('newsEventPage'),
               ),
 
             S.listItem()
@@ -83,8 +83,6 @@ export default defineConfig({
               ),
           ]),
     }),
-    structureTool(),
-    visionTool(),
   ],
 
   schema: {
