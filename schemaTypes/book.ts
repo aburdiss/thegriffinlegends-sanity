@@ -18,6 +18,11 @@ export default defineType({
       to: [{ type: 'author' }],
     }),
     defineField({
+      name: 'sort',
+      title: 'Sort',
+      type: 'number',
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'array',

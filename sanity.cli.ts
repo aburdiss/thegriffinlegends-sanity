@@ -6,5 +6,5 @@ export default defineCliConfig({
     dataset: 'production',
   },
   studioHost: 'thegriffinlegends',
-  deployment: { autoUpdates: true },
+  deployment: { autoUpdates: true, appId: 'ux011nutvonp95qmcepet563' },
 });
